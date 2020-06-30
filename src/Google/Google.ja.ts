@@ -2,17 +2,17 @@
 import Google from './Google';
 
 Google.languages!.ja = {
-    niceName: "ググる",
-    description: "Googleで検索します",
-    authors: "Miko",
+    niceName: "Google検索",
+    description: "Googleで検索",
+    authors: "Miko, Hiroki",
     homophones: {
-        'google': 'ぐぐる'
+        'google': 'ぐーぐる'
     },
     commands: {
         "Search": {
-            name: "検索します",
-            description: "ググる「空欄を埋めて下さい」",
-            match: "ぐぐる*",
+            name: "検索",
+            description: "検索するテキスト(*)を組み合わせてください",
+            match: ["けんさく*", "ぐーぐる*", "ぐぐる*"],
         }
     }
 };
