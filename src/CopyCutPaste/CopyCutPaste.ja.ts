@@ -16,23 +16,19 @@ function ensurePermission(perm: string) {
 }
 
 export default <IPluginBase & IPlugin> {...PluginBase, ...{
-    niceName: 'Copy, Cut and Paste',
-    description: "Permissions must be granted with the mouse the first time this plugin is used.",
+    niceName: 'コピー, 切り取り, 貼り付け',
+    description: "このプラグインの使用前にマウスで権限を与える必要があります。",
     version: '3.4.3',
     match: /.*/,
     homophones: {
-        'coffee': 'copy',
-        'poppee': 'copy',
-        'pissed': 'paste',
-        'taste': 'paste',
     },
-    authors: "Miko",
+    authors: "Miko, Hiroki",
 
     commands: [
         {
-            name: 'Copy',
-            description: 'Copies the selected text to the clipboard.',
-            match: 'copy',
+            name: 'コピー',
+            description: '選択されたテキストをクリップボードにコピーします。',
+            match: 'こぴー',
             fn: async () => {
                 await ensurePermission('clipboardWrite');
             },
@@ -41,10 +37,10 @@ export default <IPluginBase & IPlugin> {...PluginBase, ...{
             }
         },
         {
-            name: 'Cut',
-            description: "Cut the selected text to the clipboard.",
+            name: '切り取り',
+            description: "選択されたテキストをクリップボードに切り取ります。",
             // only works with the default ease levels...
-            match: 'cut',
+            match: ['かっと', 'きりとり']
             fn: async () => {
                 await ensurePermission('clipboardWrite');
             },
@@ -53,9 +49,9 @@ export default <IPluginBase & IPlugin> {...PluginBase, ...{
             }
         },
         {
-            name: 'Paste',
-            description: 'Paste the item in the clipboard.',
-            match: 'paste',
+            name: '貼り付け',
+            description: 'クリップボードの内容を貼り付けます。',
+            match: ['はりつけ', 'ぺーすと']
             fn: async () => {
                 await ensurePermission('clipboardRead');
             },
