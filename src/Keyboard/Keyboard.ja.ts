@@ -38,39 +38,38 @@ function pressKey(key: string, code: number = 0): boolean {
 }
 
 export default <IPlugin & IPluginBase> {...PluginBase, ...{
-    niceName: 'Keyboard',
-    description: 'For pressing individual keyboard buttons with your voice.',
+    niceName: 'キーボード',
+    description: 'キーボードのキーを個別に声で押せます。',
     version: '3.4.3',
     match: /.*/,
-    authors: "Miko",
+    authors: "Miko, Hiroki",
     homophones: {
         // causes issues with "press tab"
         // 'preston': 'press down',
-        'pressed': 'press',
     },
     commands: [
         {
-            name: 'Press Tab',
-            description: 'Equivalent of hitting the tab key.',
-            match: 'press tab',
+            name: 'Tabを押す',
+            description: 'Tabキーを押すのと同じ動作をします。',
+            match: 'たぶをおす',
             pageFn: () => {
                 if (!pressKey("Tab", 9))
                     backendPressKey(9);
             }
         },
         {
-            name: 'Press Enter',
-            description: 'Equivalent of hitting the enter key.',
-            match: 'press enter',
+            name: 'Enterを押す',
+            description: 'Enterキーを押すのと同じ動作をします。',
+            match: 'えんたーをおす',
             pageFn: () => {
                 if (!pressKey("Enter", 13))
                     backendPressKey(13);
             }
         },
         {
-            name: 'Press Down',
-            description: 'Equivalent of hitting the down arrow key.',
-            match: 'press down',
+            name: '↓を押す',
+            description: '↓キーを押すのと同じ動作をします。',
+            match: 'したをおす',
             pageFn: () => {
                 // gmail down arrow needs forcus when selecting recipient
                 if (!pressKey("ArrowDown", 40))
@@ -79,27 +78,27 @@ export default <IPlugin & IPluginBase> {...PluginBase, ...{
             }
         },
         {
-            name: 'Press Up',
-            description: 'Equivalent of hitting the up arrow key.',
-            match: 'press up',
+            name: '↑を押す',
+            description: '↑キーを押すのと同じ動作をします。',
+            match: 'うえをおす',
             pageFn: () => {
                 if (!pressKey("ArrowUp", 38))
                     backendPressKey(38);
             }
         },
         {
-            name: 'Press Left',
-            description: 'Equivalent of hitting the left arrow key.',
-            match: 'press left',
+            name: '←を押す',
+            description: '←キーを押すのと同じ動作をします。',
+            match: 'ひだりをおす',
             pageFn: () => {
                 if (!pressKey("ArrowLeft", 37))
                     backendPressKey(37);
             }
         },
         {
-            name: 'Press Right',
-            description: 'Equivalent of hitting the right arrow key.',
-            match: 'press right',
+            name: '→を押す',
+            description: '→キーを押すのと同じ動作をします。',
+            match: 'みぎをおす',
             pageFn: () => {
                 if (!pressKey("ArrowRight", 39))
                     backendPressKey(39);
